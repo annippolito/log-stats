@@ -1,4 +1,4 @@
-# summary-stats-lib
+# log-stats
 A library to handle stats on execution time and memory usage of methods.
 This library is really lightweight, it provides just an annotation: **@LogStats** to be used in your code.
 
