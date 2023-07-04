@@ -9,7 +9,7 @@ This library is really lightweight, it provides just an annotation: **@LogStats*
 ```xml
 <dependency>
   <groupId>io.github.annippolito</groupId>
-  <artifactId>summary-stats-lib</artifactId>
+  <artifactId>log-stats</artifactId>
   <version>1.0.0</version>
 </dependency>
 ```
@@ -47,7 +47,7 @@ Add this plugin configuration in your pom to weave aspectj on your classes.
         <aspectLibraries>
             <aspectLibrary>
                 <groupId>io.github.annippolito</groupId>
-                <artifactId>summary-stats-lib</artifactId>
+                <artifactId>log-stats</artifactId>
             </aspectLibrary>
         </aspectLibraries>
     </configuration>

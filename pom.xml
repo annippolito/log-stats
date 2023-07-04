@@ -7,6 +7,11 @@
   <groupId>io.github.annippolito</groupId>
   <artifactId>log-stats</artifactId>
   <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>log-stats</name>
+  <description>A library to handle stats on execution time and memory usage of methods.</description>
+  <url>https://github.com/annippolito/log-stats</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,6 +26,27 @@
     <assertj.version>3.24.2</assertj.version>
     <log4j.version>2.20.0</log4j.version>
   </properties>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://www.opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Annibale Ippolito</name>
+      <email>annibaleippolito@gmail.com</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/annippolito/log-stats.git</connection>
+    <developerConnection>scm:git:git://github.com/annippolito/log-stats.git</developerConnection>
+    <url>https://github.com/annippolito/log-stats/tree/main</url>
+  </scm>
+
 
   <dependencies>
     <dependency>
@@ -68,7 +94,6 @@
       <version>${assertj.version}</version>
       <scope>test</scope>
     </dependency>
-
 
     <dependency>
       <groupId>org.mockito</groupId>
