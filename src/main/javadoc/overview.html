@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+  <HEAD>
+    <TITLE>log-stats overview</TITLE>
+  </HEAD>
+  <BODY>
+    <h1>log-stats overview</h1>
+    <p>A library to handle stats on execution time and memory usage of methods. This library is really lightweight, it provides just an annotation: @LogStats to be used in your code.</p>
+    <h2>Usage</h2>
+    <h3>Import dependency in your pom.xml</h3>
+    <pre>
+      {@code <dependency>
+        <groupId>io.github.annippolito</groupId>
+        <artifactId>summary-stats-lib</artifactId>
+        <version>1.0.0</version>
+      </dependency> }
+    </pre>
+    <h3>Plugin configuration</h3>
+    <p>Add this plugin configuration in your pom to weave aspectj on your classes.</p>
+    <pre>
+      {@code
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>aspectj-maven-plugin</artifactId>
+          <version>1.14.0</version>
+          <executions>
+            <execution>
+              <id>default-compile</id>
+              <phase>process-classes</phase>
+              <goals>
+                <goal>compile</goal>
+              </goals>
+              <configuration>
+                <weaveDirectories>
+                  <weaveDirectory>${project.build.directory}/classes</weaveDirectory>
+                </weaveDirectories>
+              </configuration>
+            </execution>
+          </executions>
+          <configuration>
+            <complianceLevel>8</complianceLevel>
+            <source>8</source>
+            <target>8</target>
+            <Xlint>ignore</Xlint>
+            <encoding>UTF-8</encoding>
+            <excludes>
+              <exclude>**/*.java</exclude>
+            </excludes>
+            <forceAjcCompile>true</forceAjcCompile>
+            <aspectLibraries>
+              <aspectLibrary>
+                <groupId>io.github.annippolito</groupId>
+                <artifactId>log-stats</artifactId>
+              </aspectLibrary>
+            </aspectLibraries>
+          </configuration>
+        </plugin>
+      }
+    </pre>
+    <h3>Annotate methods you want to be analysed with @LogStats</h3>
+    <pre>
+      <code>
+        import logstats.annotation.LogStats;
+        public class Service {
+          {@literal @}LogStats
+          public void method() {
+          }
+        }
+      </code>
+    </pre>
+    <h2>Output</h2>
+    <p>In Logs you will see a summary of stats printed out as in this example:</p>
+    <pre>
+      {@code
+        2023-07-03 17:02:53.156  INFO 25872 --- [io-8080-exec-10] s.aspect.LogStatsAspect  : CustomerController.getExternalId(..) logStats:{executionTime:43 ms, memoryConsumed:2097152 bytes}
+      }
+    </pre>
+    <h2>Compatibility</h2>
+    <p>Java version greater than or equals 1.8</p>
+  </BODY>
+</HTML>

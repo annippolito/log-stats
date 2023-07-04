@@ -14,13 +14,20 @@ public class Stats {
   private final long executionTime;
   private final MemoryUsage memoryUsage;
 
+  /**
+   * Use this method to grab time and memory usage at some point in time.
+   *
+   * @return a new instance of Stats with current time and memory.
+   */
   public static Stats retrieve() {
     return new Stats();
   }
 
+  /**
+   * Private constructor to be used in {@link Stats#retrieve()} method.
+   */
   private Stats() {
     executionTime = System.currentTimeMillis();
     memoryUsage = ManagementFactory.getMemoryMXBean().getHeapMemoryUsage();
   }
-
 }

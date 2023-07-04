@@ -13,6 +13,10 @@ public class Summary {
   private long executionTime;
   private long memoryConsumed;
 
+  /**
+   * The toString method to have stats printed out in logs.
+   * @return a formatted string. Example: <code>stats:{executionTime:%d ms, memoryConsumed:%d bytes}</code>
+   */
   @Override
   public String toString() {
     return String.format("stats:{executionTime:%d ms, memoryConsumed:%d bytes}", executionTime, memoryConsumed);

@@ -17,6 +17,14 @@ import logstats.model.Summary;
 @Aspect
 @Log4j2
 public class LogStatsAspect {
+
+  /**
+   * Calculate statistics on the target method (executionTime and memoryUsage)
+   *
+   * @param joinPoint is the joinPoint for the aspect
+   * @return whatever the target method returns
+   * @throws Throwable If the target method throws an exception the aspect does not catch it.
+   */
   @Around("@annotation(logstats.annotation.LogStats)")
   public Object calculateStats(ProceedingJoinPoint joinPoint) throws Throwable {
     final Stats start = Stats.retrieve();
