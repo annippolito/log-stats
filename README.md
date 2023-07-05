@@ -1,3 +1,7 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/annippolito/log-stats/blob/main/LICENSE)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.annippolito/log-stats/badge.svg)](https://central.sonatype.com/artifact/io.github.annippolito/log-stats/1.0.0)
+[![javadoc](https://javadoc.io/badge2/io.github.annippolito/log-stats/javadoc.svg)](https://javadoc.io/doc/io.github.annippolito/log-stats)
+
 # log-stats
 A library to handle stats on execution time and memory usage of methods.
 This library is really lightweight, it provides just an annotation: **@LogStats** to be used in your code.
